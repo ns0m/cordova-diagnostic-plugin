@@ -3373,7 +3373,7 @@ Checks if the application is authorized to use external storage.
 
 Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return TRUE as permissions are already granted at installation time.
-- This checks for `READ_EXTERNAL_STORAGE` `CAMERA` run-time permission.
+- This checks for `READ_EXTERNAL_STORAGE` run-time permission.
 
     `cordova.plugins.diagnostic.isExternalStorageAuthorized(successCallback, errorCallback);`
 
@@ -3485,8 +3485,6 @@ For example, on a Samsung Galaxy S4 running Android 7.1.1:
 
  which are on external removable storage.
 
-- Requires permission for `READ_EXTERNAL_STORAGE` run-time permission which must be added to `AndroidManifest.xml`.
-
     `cordova.plugins.diagnostic.getExternalSdCardDetails(successCallback, errorCallback);`
     
 - Note: this function is intended to find paths of external removable SD cards on which the SD card adapter is directly mounted on the device, such as those in the Samsung Galaxy S range of devices. It explicitly attempts to filter out non-SD card storage paths such as OTG devices since access to these devices on Android 6.+ via the File API requires root access and normal access requires use of the Storage Access Framework.
@@ -3499,7 +3497,7 @@ Each array entry is an object with the following keys:
     - {String} path - absolute path to the storage location
     - {String} filePath - absolute path prefixed with file protocol for use with cordova-plugin-file
     - {Boolean} canWrite - true if the location is writable
-    - {Integer} freeSpace - number of bytes of free space on the device on which the storage locaiton is mounted.
+    - {Integer} freeSpace - number of bytes of free space on the device on which the storage location is mounted.
     - {String} type - indicates the type of storage location: either "application" if the path is an Android application sandbox path or "root" if the path is the device root.
 - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
