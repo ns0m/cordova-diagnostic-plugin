@@ -143,7 +143,7 @@ var main = function() {
         cwd = path.resolve();
         pluginNodePath = cwd;
 
-        modulesPath = path.resolve(pluginNodePath, "..");
+        modulesPath = path.resolve(pluginNodePath, "..", "..");
         projectPath = path.resolve(modulesPath, "..");
         pluginScriptsPath = path.resolve(pluginNodePath, "scripts");
 
